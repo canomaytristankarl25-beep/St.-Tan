@@ -254,7 +254,7 @@ function showSection(name) {
 function initLiveData() {
   waitForFb(() => {
     loadProfile();
-    loadGallery();
+    // Gallery is now hardcoded in index.html — no Firebase load needed
     loadAbout();
     loadFavorites();
     loadHobbies();
@@ -272,11 +272,7 @@ async function loadProfile() {
     if (d.name) document.getElementById('profileName').textContent = d.name;
     if (d.motto) { const m = document.getElementById('profileMotto'); m.textContent = d.motto; m.classList.remove('admin-placeholder'); }
     if (d.intro) { const i = document.getElementById('profileIntro'); i.textContent = d.intro; i.classList.remove('admin-placeholder'); }
-    if (d.photoURL) {
-      const img = document.getElementById('profilePicImg');
-      img.src = d.photoURL; img.style.display = 'block';
-      document.querySelector('.profile-initials') && (document.querySelector('.profile-initials').style.display = 'none');
-    }
+    // Profile photo is now set directly in index.html — no Firebase photo sync needed
   });
   // Set edit placeholders
   document.getElementById('profileMotto').setAttribute('data-placeholder', 'Add a motto…');
