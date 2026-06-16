@@ -57,11 +57,9 @@
         <div class="profile-card">
           <div class="profile-pic-wrap">
             <div class="profile-pic" id="profilePicDisplay">
-              <span class="profile-initials">TK</span>
-              <img id="profilePicImg" src="" alt="Profile" style="display:none"/>
+              <!-- ✦ PUT YOUR PROFILE PICTURE HERE — replace the src value below with your image path or URL -->
+              <img id="profilePicImg" src="471034999_1736030990572908_3130134205571221322_n.jpg" alt="Profile"/>
             </div>
-            <button id="editPicBtn" class="edit-pic-btn admin-only" onclick="triggerProfilePicUpload()" title="Change photo">✎</button>
-            <input type="file" id="profilePicInput" accept="image/*" style="display:none" onchange="uploadProfilePic(event)"/>
           </div>
           <div class="profile-info">
             <h2 id="profileName" class="profile-name">Tristan Karl Celestial Canomay</h2>
@@ -71,21 +69,25 @@
         </div>
       </aside>
 
-      <!-- RIGHT: Gallery -->
       <main class="gallery-col">
         <div class="gallery-header">
           <h2 class="section-title">GALLERY</h2>
-          <div class="admin-only gallery-upload-btns">
-            <button class="btn-upload" onclick="document.getElementById('imageUploadInput').click()">⊕ Image</button>
-            <button class="btn-upload" onclick="document.getElementById('videoUploadInput').click()">⊕ Video</button>
-            <input type="file" id="imageUploadInput" accept="image/jpg,image/jpeg,image/png,image/webp" style="display:none" onchange="uploadMedia(event,'image')"/>
-            <input type="file" id="videoUploadInput" accept="video/mp4,video/webm" style="display:none" onchange="uploadMedia(event,'video')"/>
-          </div>
         </div>
 
+        <!-- ✦ PUT YOUR GALLERY PICTURES HERE — add or remove <div class="gallery-item"> blocks below -->
+        <!-- Each block: replace src="put here your gallery" with your actual image path or URL -->
         <div id="galleryGrid" class="gallery-masonry">
-          <div class="gallery-empty" id="galleryEmpty">
-            <p>The gallery awaits your first memory ✦</p>
+          <div class="gallery-item" onclick="openLightboxImg(this.querySelector('img').src)">
+            <img src="480860059_1778208219688518_6369621483094298941_n.jpg" alt="Gallery photo 1" loading="lazy"/>
+            <div class="gallery-item-overlay"></div>
+          </div>
+          <div class="gallery-item" onclick="openLightboxImg(this.querySelector('img').src)">
+            <img src="484964610_1798277327681607_2426916580697709784_n.jpg" alt="Gallery photo 2" loading="lazy"/>
+            <div class="gallery-item-overlay"></div>
+          </div>
+          <div class="gallery-item" onclick="openLightboxImg(this.querySelector('img').src)">
+            <img src="486631981_1806835263492480_5720282282254725003_n.jpg" alt="Gallery photo 3" loading="lazy"/>
+            <div class="gallery-item-overlay"></div>
           </div>
         </div>
       </main>
